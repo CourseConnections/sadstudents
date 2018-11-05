@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dport=$PORT -jar target/CourseConnections-1.0.war
+web: java $JAVA_OPTS -Dport=$PORT -war target/CourseConnections-1.0.war
