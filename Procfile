@@ -1,1 +1,1 @@
-war:deploy target/CourseConnections-1.0.war
+web: war:deploy target/CourseConnections-1.0.war
