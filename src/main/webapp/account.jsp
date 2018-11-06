@@ -25,7 +25,6 @@
                 function onFailure(error) {
                   console.log(error);
                 }
-                }
               </script>
         <main id="profile2">              
             <img src="images/instagram_profile_image.png" alt="logo" id="logo">
