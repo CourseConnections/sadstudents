@@ -20,6 +20,11 @@ main {
     padding: .5em;
     clear: both;
     border: 2px solid #85a3e0;
+    height: 100%;
+}
+
+footer {
+    clear: both;
 }
 
 .special_text {
@@ -86,7 +91,7 @@ h2 {
 }
 
 #navbar ul {
-    list-style-type:none;
+    list-style-type: none;
     margin: 0;
     display: inline-block;
     padding: 0;
@@ -135,19 +140,6 @@ h2 {
     margin-right: auto;
     
 }
-h5, h6 {    
-    margin-top: 0px;
-    margin-left: 200px;
-    font-size: 20px;   
-    color: #85a3e0;
-    padding: 0px;
-}
-h5 {
-   text-decoration: underline;
-}
-h6 {
-    text-decoration: none;
-}
 #profile2 {
     border: none;    
 }
@@ -160,4 +152,35 @@ h6 {
 
 .center_wrapper {
     text-align: center;
+}
+
+#welcome_text {
+    margin-left: 6em;
+}
+
+.account_header {
+    font-size: 150%;
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+}
+
+#courses_column {
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+
+#settings_column {
+    width: 45%;
+    height: 100%;
+    float: right;
+}
+
+#courses {
+    list-style-type: none;
+}
+
+#settings {
+    list-style-type: none;
 }

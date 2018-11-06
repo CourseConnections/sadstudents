@@ -17,14 +17,30 @@
             <jsp:include page="header.jsp"/>
         </header>
         <main>
-            <h1 id="" class="special_text">Welcome, ${name}!</h1>
             <img src="images/instagram_profile_image.png" alt="logo" id="logo">
+            <br>
+            <br>
+            <br>
+            <h1 id="welcome_text" class="special_text">Welcome, ${name}!</h1>
             <br style="clear:both">
-            <div id="profile">
-              <h5>Name:</h5> ${name}
-              <h5>Username: </h5>
-              <h5>Email:</h5> ${email}             
-            </div>                    
+            <div id="courses_column">
+                <h2 class="special_text account_header">Courses</h2>
+                <ul id="courses">
+                    <c:forEach items="${courses}" var="course">
+                        <li>${course.getTitle()}</li>
+                    </c:forEach>
+                </ul>
+            </div>
+            <div id="settings_column">
+                <h2 class="special_text account_header">Account Settings</h2>
+                <ul id="settings" class="special_text">
+                    <li>Friends</li>
+                    <li>Ignore List</li>
+                    <li>Manage Courses</li>
+                    <li>Change Username</li>
+                    <li>Sign out</li>
+                </ul>
+            </div>
         </main>
         <footer>           
            <jsp:include page="footer.jsp"/>
