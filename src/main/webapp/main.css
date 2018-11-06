@@ -62,6 +62,8 @@ h2 {
 #signout {
     float:right; 
     padding-top: 0px;
+    text-decoration: none;
+    color: #85a3e0
 }
 #signout a:hover {
     color: #800080;

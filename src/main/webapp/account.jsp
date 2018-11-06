@@ -16,7 +16,8 @@
         <header>
             <jsp:include page="header.jsp"/>
         </header>
-        <main id="profile2">              
+        <main>
+            <h1 id="" class="special_text">Welcome, ${name}!</h1>
             <img src="images/instagram_profile_image.png" alt="logo" id="logo">
             <br style="clear:both">
             <div id="profile">

@@ -3,23 +3,20 @@
     Created on : Oct 15, 2018, 4:31:15 PM
     Author     : soup
 --%>
-
+    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<c:if test="${name != null}">
-      Welcome, ${name}!
-</c:if>
-
-<a href="#" onclick="signOut();">Sign out</a>
 <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+    }
 </script>
-       
+    
+<a id="signout" class="special_text" href="account?action=logout" onclick="signOut();">Sign out</a>
+    
 <h1 id="title" class="special_text"><span>Course</span>Connections</h1>
 <nav id="navbar">
     <ul class="special_text">
