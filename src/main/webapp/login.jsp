@@ -11,43 +11,39 @@
         <title>Login</title>
         <%@include file="head.jsp"%>
     </head>
- 
-        <header>
-            <jsp:include page="header.jsp"/>
-        </header>
-        <main>
-            <head>
-    <meta name="google-signin-client_id" content="1023685466675-e6trlgn455lrvi81f95g2478cg526e5f.apps.googleusercontent.com">
-      
-  </head>
-  <body>
-    <div id="my-signin2"></div>
-  <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getEmail());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-         
-  </body>
-        </main>
-        <footer>
-            <jsp:include page="footer.jsp"/>
-        </footer>
+    
+    <header>
+        <jsp:include page="header.jsp"/>
+    </header>
+    <main>
+        <body>
+            <div id="my-signin2"></div>
+            <script>
+                function onSuccess(googleUser) {
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+                    console.log('Logged in as: ' + googleUser.getBasicProfile().getEmail());
+                }
+                function onFailure(error) {
+                    console.log(error);
+                }
+                function renderButton() {
+                    gapi.signin2.render('my-signin2', {
+                        'scope': 'profile email',
+                        'width': 240,
+                        'height': 50,
+                        'longtitle': true,
+                        'theme': 'dark',
+                        'onsuccess': onSuccess,
+                        'onfailure': onFailure
+                    });
+                }
+            </script>
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+            
+        </body>
+    </main>
+    <footer>
+        <jsp:include page="footer.jsp"/>
+    </footer>
     
 </html>

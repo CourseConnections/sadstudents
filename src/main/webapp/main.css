@@ -34,13 +34,6 @@ main {
 
 .special_text a:active, .special_text a:hover {
     color: #800080;
-} 
-
-.g-signin2 {    
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    
 }
 
 #title {
