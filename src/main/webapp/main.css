@@ -75,6 +75,11 @@ h2 {
     text-align: right;
 }
 
+#navbar {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 #navbar ul {
     list-style-type:none;
     margin: 0;
