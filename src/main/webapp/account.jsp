@@ -16,23 +16,13 @@
         <header>
             <jsp:include page="header.jsp"/>
         </header>
-        <div id="my-signin2"></div>
-              <script>
-                function onSuccess(googleUser) {                 
-                  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-                  console.log('Logged in as: ' + googleUser.getBasicProfile().getEmail());
-                }
-                function onFailure(error) {
-                  console.log(error);
-                }
-              </script>
         <main id="profile2">              
             <img src="images/instagram_profile_image.png" alt="logo" id="logo">
-            <br style="clear:both"              
+            <br style="clear:both">
             <div id="profile">
-              <h5>Name: </h3> 
+              <h5>Name:</h5> ${name}
               <h5>Username: </h5>
-              <h5>Email: </h3>              
+              <h5>Email:</h5> ${email}             
             </div>                    
         </main>
         <footer>           

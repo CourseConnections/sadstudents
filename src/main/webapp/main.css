@@ -45,6 +45,16 @@ main {
     margin-bottom: 0;
 }
 
+#index_title {
+    font-size: 350%;
+    color: #85a3e0;
+    text-align: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 2%;
+    margin-top: 10%;
+}
+
 h2 {
     color: #85a3e0;
     font-size: 20px;
@@ -57,11 +67,11 @@ h2 {
     color: #800080;
 }
 
-#title span {
+#title span, #index_title span {
     color: #800080;
 }
 #login_register {
-    float: right;
+    display: inline-block
 }
 
 #copyright {
@@ -138,4 +148,14 @@ h6 {
 }
 #profile2 {
     border: none;    
+}
+
+#login_div {
+    display: inline-block;
+    width: 40%;
+    border: 3px solid #85a3e0;
+}
+
+.center_wrapper {
+    text-align: center;
 }
