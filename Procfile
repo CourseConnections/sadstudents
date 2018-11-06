@@ -1,1 +1,1 @@
-web: war:deploy target/CourseConnections-1.0.war
+web: java $JAVA_OPTS -jar target/endorsed/webapp-runner.jar --port $PORT target/*.war
