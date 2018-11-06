@@ -17,7 +17,7 @@
         </header>
         <main>
             <head>
-    <meta name="google-signin-client_id" content="courseconnections-221623.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="1023685466675-e6trlgn455lrvi81f95g2478cg526e5f.apps.googleusercontent.com">
       
   </head>
   <body>
