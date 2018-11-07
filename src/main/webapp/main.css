@@ -68,7 +68,7 @@ h2 {
     float:right; 
     padding-top: 0px;
     text-decoration: none;
-    color: #85a3e0
+    color: #85a3e0;
 }
 #signout a:hover {
     color: #800080;
@@ -78,7 +78,7 @@ h2 {
     color: #800080;
 }
 #login_register {
-    display: inline-block
+    display: inline-block;
 }
 
 #copyright {

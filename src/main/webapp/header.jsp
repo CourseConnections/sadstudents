@@ -6,15 +6,6 @@
     
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<script>
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
-        });
-    }
-</script>
-    
 <a id="signout" class="special_text" href="account?action=logout" onclick="signOut();">Sign out</a>
     
 <h1 id="title" class="special_text"><span>Course</span>Connections</h1>

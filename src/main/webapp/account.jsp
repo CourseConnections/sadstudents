@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
         <title>Account Page</title>
-        <%@include file="head.jsp"%>  
+        <%@include file="head.jsp"%>
     </head>
     <body>
         <header>
@@ -21,7 +21,7 @@
             <br>
             <br>
             <br>
-            <h1 id="welcome_text" class="special_text">Welcome, ${name}!</h1>
+            <h1 id="welcome_text" class="special_text">Hello, ${name}!</h1>
             <br style="clear:both">
             <div id="courses_column">
                 <h2 class="special_text account_header">Courses</h2>

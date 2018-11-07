@@ -1,6 +1,6 @@
-/home/soup/NetBeansProjects/CourseConnections/src/main/java/com/mycompany/courseconnections/Course.java
-/home/soup/NetBeansProjects/CourseConnections/src/main/java/com/mycompany/courseconnections/UserDatabase.java
-/home/soup/NetBeansProjects/CourseConnections/src/main/java/com/mycompany/courseconnections/CourseDatabase.java
-/home/soup/NetBeansProjects/CourseConnections/src/main/java/com/mycompany/courseconnections/IdTokenVerifierAndParser.java
-/home/soup/NetBeansProjects/CourseConnections/src/main/java/com/mycompany/courseconnections/AccountServlet.java
-/home/soup/NetBeansProjects/CourseConnections/src/main/java/com/mycompany/courseconnections/User.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Utils/IdTokenVerifierAndParser.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Servlets/AccountServlet.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Databases/UserDatabase.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Beans/Course.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Beans/User.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Databases/CourseDatabase.java
