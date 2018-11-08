@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
-        <title>Account Page</title>
+        <title>Account</title>
         <%@include file="head.jsp"%>
     </head>
     <body>
@@ -23,7 +23,7 @@
             <br>
             <h1 id="welcome_text" class="special_text">Hello, ${name}!</h1>
             <br style="clear:both">
-            <div id="courses_column">
+            <div id="content_col_left">
                 <h2 class="special_text account_header">Courses</h2>
                 <ul id="courses">
                     <c:forEach items="${courses}" var="course">
@@ -31,7 +31,7 @@
                     </c:forEach>
                 </ul>
             </div>
-            <div id="settings_column">
+            <div class="content_col_right">
                 <h2 class="special_text account_header">Account Settings</h2>
                 <ul id="settings" class="special_text">
                     <li>Friends</li>

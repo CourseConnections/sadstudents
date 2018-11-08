@@ -165,16 +165,22 @@ h2 {
     text-align: center;
 }
 
-#courses_column {
+.content_col_left {
     width: 45%;
     height: 100%;
     float: left;
 }
 
-#settings_column {
+.content_col_right {
     width: 45%;
     height: 100%;
     float: right;
+}
+
+#courses_column {
+    width: 45%;
+    height: 100%;
+    float: left;
 }
 
 #courses {
@@ -183,4 +189,9 @@ h2 {
 
 #settings {
     list-style-type: none;
+}
+
+.page_header {
+    text-align: center;
+    border-bottom: 2px solid #85a3e0;
 }
