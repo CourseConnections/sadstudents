@@ -12,7 +12,7 @@
 <nav id="navbar">
     <ul class="special_text">
         <li><a href="menu.jsp">Home</a></li>
-        <li><a href="#">Chat</a></li>
+        <li><a href="chat.jsp">Chat</a></li>
         <li><a href="courses.jsp">Courses</a></li>
         <li><a href="account.jsp">Account</a></li>
     </ul>

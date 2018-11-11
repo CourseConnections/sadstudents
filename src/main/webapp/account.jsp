@@ -18,21 +18,18 @@
         </header>
         <main>
             <img src="images/instagram_profile_image.png" alt="logo" id="logo">
-            <br>
-            <br>
-            <br>
             <h1 id="welcome_text" class="special_text">Hello, ${name}!</h1>
-            <br style="clear:both">
-            <div id="content_col_left">
-                <h2 class="special_text account_header">Courses</h2>
-                <ul id="courses">
+            <div class="content_col_left">
+                <h2 class="special_text col_header">Courses</h2>
+                <ul id="courses" class="special_text">
                     <c:forEach items="${courses}" var="course">
                         <li>${course.getTitle()}</li>
                     </c:forEach>
+                        <li><a href="courses.jsp" >Edit Courses</a></li>
                 </ul>
             </div>
             <div class="content_col_right">
-                <h2 class="special_text account_header">Account Settings</h2>
+                <h2 class="special_text col_header">Account Settings</h2>
                 <ul id="settings" class="special_text">
                     <li>Friends</li>
                     <li>Ignore List</li>
@@ -41,6 +38,7 @@
                     <li>Sign out</li>
                 </ul>
             </div>
+            <br sytle="clear: both;">
         </main>
         <footer>           
            <jsp:include page="footer.jsp"/>
