@@ -26,31 +26,6 @@
                         </c:forEach>
                         <li><button onclick="return addCourse()">Join ITCS 4155</button></li>
                         <li><a href="course?action=add">Join ITCS 4155</a></li>
-                            
-                    <script>
-                        function addCourse() {
-                            
-                            alert("Clicked!");
-                            
-                            $.ajax({
-                                type: "GET",
-                                url: "https://courseconnections.rocket.chat/api/v1/commands.run",
-                                data: {"command":"invite","roomId":"sXBYJjvCpJ3EtGmAY","params":"@jamie.gachie"},
-                                headers: '{"X-Auth-Token":"bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp","X-User-ID":"initialuser","Content-type":"application/json"}',
-                                contentType: "application/json",
-                                beforeSend: function(request) {
-                                    request.setRequestHeader("X-Auth-Token", "bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp");
-                                    request.setRequestHeader("X-User-ID", "initialuser");
-                                },
-                                success: function(data) {
-                                    alert(data);
-                                    //do something when request is successfull
-                                },
-                                processData: false,
-                                dataType: "json"
-                            });
-                        }
-                    </script>
                 </ul>
             </div>
             <div class="content_col_right">

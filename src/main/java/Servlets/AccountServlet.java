@@ -5,7 +5,9 @@
 */
 package Servlets;
 
+import Beans.Course;
 import Beans.User;
+import Databases.CourseDatabase;
 import Databases.UserDatabase;
 import Utils.IdTokenVerifierAndParser;
 import java.io.IOException;
@@ -17,6 +19,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import java.sql.Connection;
 import javax.servlet.http.HttpSession;
 import java.sql.DriverManager;
+import java.util.ArrayList;
 
 /**
  *
@@ -48,17 +51,21 @@ public class AccountServlet extends HttpServlet {
                 GoogleIdToken.Payload payLoad = IdTokenVerifierAndParser.getPayload(idToken);
                 String name = (String) payLoad.get("name");
                 String email = payLoad.getEmail();
-                /*
+                
                 User user = UserDatabase.getUser(email);
                 
-                if (user == null) {
+                if (user == null)
                     UserDatabase.addUser(name, "@jamie.gachie", email);
-                }
-                */
+                
+                ArrayList<Course> courses = CourseDatabase.getAllCourses();
+                
+                if (courses == null)
+                    request.getServletContext().getRequestDispatcher("/menu.jsp").forward(request, response);
                 
                 HttpSession session = request.getSession(true);
                 session.setAttribute("name", name);
                 session.setAttribute("email", email);
+                session.setAttribute("courseList", courses);
                 request.getServletContext().getRequestDispatcher("/account.jsp").forward(request, response);
                 
             } catch (Exception e) {

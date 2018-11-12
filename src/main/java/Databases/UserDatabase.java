@@ -19,12 +19,6 @@ import java.sql.DriverManager;
  * @author soup
  */
 public class UserDatabase {
-    private static DataSource dataSource;
-    private static String connectionUrl = System.getenv("JDBC_DATABASE_URL");
-    
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
     
     public static void addUser(String name, String username, String email) {
         addUser(new User(name, username, email, 0));
@@ -35,12 +29,12 @@ public class UserDatabase {
         PreparedStatement ps = null;
         
         try {
-            conn = DriverManager.getConnection(connectionUrl);
+            conn = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_a8045e306fa2069?reconnect=true&user=b5126a21c3502c&password=366ae8c4");
             String query = "INSERT INTO User (Name, Username, Email) VALUES (?, ?, ?)";
             ps = conn.prepareStatement(query);
-            ps.setString(0, user.getName());
-            ps.setString(1, user.getUsername());
-            ps.setString(2, user.getEmail());
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getUsername());
+            ps.setString(3, user.getEmail());
             
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -57,7 +51,8 @@ public class UserDatabase {
         ArrayList<User> users = null;
         
         try {
-            conn = DriverManager.getConnection(connectionUrl);
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            conn = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_a8045e306fa2069?reconnect=true&user=b5126a21c3502c&password=366ae8c4");
             String query = "SELECT * FROM User";
             ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
@@ -71,8 +66,15 @@ public class UserDatabase {
                         rs.getInt("UserID")));
             }
         } catch (SQLException e) {
-            e.printStackTrace(System.err);
-        } finally {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        finally {
             if (conn != null)
                 try {conn.close();} catch (Exception e) {}
         }
@@ -84,7 +86,7 @@ public class UserDatabase {
         ArrayList<User> users = getAllUsers();
         
         for (User user : users) {
-            if (user.getEmail() == email)
+            if (user.getEmail().equals(email))
                 return user;
         }
         

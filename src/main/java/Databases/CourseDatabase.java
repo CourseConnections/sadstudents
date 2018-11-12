@@ -7,22 +7,17 @@ package Databases;
 
 import Beans.Course;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.sql.DataSource;
 
 /**
  *
  * @author soup
  */
 public class CourseDatabase {
-    private static DataSource dataSource;
-    
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
     
     public static ArrayList<Course> getAllCourses() {
         Connection conn = null;
@@ -30,6 +25,7 @@ public class CourseDatabase {
         ArrayList<Course> courses = null;
         
         try {
+            conn = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-01.cleardb.net/heroku_a8045e306fa2069?reconnect=true&user=b5126a21c3502c&password=366ae8c4");
             String query = "SELECT * FROM Course";
             ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
@@ -55,7 +51,8 @@ public class CourseDatabase {
     }
     
     public static Course getCourse(int CRN) {
-        ArrayList<Course> courses = getAllCourses();
+        //ArrayList<Course> courses = getAllCourses();
+        ArrayList<Course> courses = new ArrayList<Course>();
         
         for (Course course : courses) {
             if (course.getCRN() == CRN)

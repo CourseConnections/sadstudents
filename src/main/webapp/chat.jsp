@@ -18,7 +18,7 @@
         </header>
         <main>
             <div id="chat_div">
-                <iframe src="https://courseconnections.rocket.chat?layout=embedded" id="chat_frame"></iframe>
+                <iframe src="https://courseconnections.rocket.chat" id="chat_frame"></iframe>
             </div>
         </main>
         <footer>           

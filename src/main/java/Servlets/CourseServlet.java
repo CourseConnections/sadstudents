@@ -49,54 +49,41 @@ public class CourseServlet extends HttpServlet {
             request.getServletContext().getRequestDispatcher("/menu.jsp").forward(request, response);
         
         if (action.equals("add")) {
-            
-            String stringUrl = "https://courseconnections.rocket.chat/api/v1/commands.run";
-            URL url = new URL(stringUrl);
-            HttpURLConnection uc = (HttpURLConnection) url.openConnection();
-            
-            uc.addRequestProperty("X-Auth-Token", "bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp");
-            uc.addRequestProperty("X-User-ID", "initialuser");
-            uc.addRequestProperty("Content-type", "application/json");
-            
-            Map<String, String> parameters = new HashMap<>();
-            parameters.put("command", "invite");
-            parameters.put("roomId", "sXBYJjvCpJ3EtGmAY");
-            parameters.put("user", "@jamie.gachie");
-            
-            uc.setDoOutput(true);
-            DataOutputStream out = new DataOutputStream(uc.getOutputStream());
-            out.writeBytes(ParameterStringBuilder.getParamsString(parameters));
-            out.flush();
-            out.close();
-            
-            System.out.println("Error: " + uc.getResponseCode());
-            
             /*
-            
-            Process p = Runtime.getRuntime().exec("curl -H \"X-Auth-Token: bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp\" "
-            + "-H \"X-User-ID: initialuser\" "
-            + "-H \"Content-type: application/json\" "
-            + "-d {command:invite,roomId:sXBYJjvCpJ3EtGmAY,params,@jamie.gachie}");
-            
+            pb = new ProcessBuilder("curl",
+                    "-H", "\"X-Auth-Token: bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp\"",
+                    "-H", "\"X-User-ID: initialuser\"",
+                    "-H", "\"Content-type: application/json\"",
+                    "https://courseconnections.rocket.chat/api/v1/commands.run",
+                    "-d", "\'{\"command\":\"invite\",\"roomId\":\"sXBYJjvCpJ3EtGmAY\",\"params\",\"@jamie.gachie\"}\'");
             */
             
             /*
             pb = new ProcessBuilder("curl",
-            "-H", "X-Auth-Token: bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp",
-            "-H", "X-User-ID: initialuser",
-            "-H", "Content-type: application/json",
-            "https://courseconnections.rocket.chat/api/v1/commands.run",
-            "-d {command:invite,roomId:sXBYJjvCpJ3EtGmAY,params,@jamie.gachie}");
+                    "https://courseconnections.rocket.chat/api/v1/login",
+                    "-d", "username=CourseConnections2018&password=2018ITCSProject!");
+            */
             
-            try {
+            pb = new ProcessBuilder("curl",
+                    "https://courseconnections.rocket.chat/api/v1/commands.run",
+                    "-H", "X-Auth-Token: j13UxTxvJLweRb7yrKIveQMzbdFIzZl8EYNDJaTaTE0",
+                    "-H", "X-User-ID: initialuser",
+                    "-d", "command=invite&roomId=sXBYJjvCpJ3EtGmAY&params=@jamie.gachie");
             
             pb.redirectErrorStream(true);
             Process p = pb.start();
-            } catch (Exception e) {
-            e.printStackTrace();
-            }
-            */
+            InputStream is = p.getInputStream();
             
+            BufferedInputStream bis = new BufferedInputStream(is);
+            byte[] contents = new byte[1024];
+            
+            int bytesRead = 0;
+            String strFileContents = "";
+            while((bytesRead = bis.read(contents)) != -1) {
+                strFileContents += new String(contents, 0, bytesRead);
+            }
+            
+            request.getServletContext().log(strFileContents);
             request.getServletContext().getRequestDispatcher("/courses.jsp").forward(request, response);
         }
         else if (action.equals("remove")) {
