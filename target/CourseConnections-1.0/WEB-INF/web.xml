@@ -4,9 +4,17 @@
         <servlet-name>AccountServlet</servlet-name>
         <servlet-class>Servlets.AccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CourseServlet</servlet-name>
+        <servlet-class>Servlets.CourseServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AccountServlet</servlet-name>
         <url-pattern>/account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CourseServlet</servlet-name>
+        <url-pattern>/course</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
