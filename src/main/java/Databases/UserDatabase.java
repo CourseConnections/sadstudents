@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.sql.DataSource;
+import java.sql.DriverManager;
 
 /**
  *
@@ -19,6 +20,7 @@ import javax.sql.DataSource;
  */
 public class UserDatabase {
     private static DataSource dataSource;
+    private static String connectionUrl = System.getenv("JDBC_DATABASE_URL");
     
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -33,6 +35,7 @@ public class UserDatabase {
         PreparedStatement ps = null;
         
         try {
+            conn = DriverManager.getConnection(connectionUrl);
             String query = "INSERT INTO User (Name, Username, Email) VALUES (?, ?, ?)";
             ps = conn.prepareStatement(query);
             ps.setString(0, user.getName());
@@ -54,6 +57,7 @@ public class UserDatabase {
         ArrayList<User> users = null;
         
         try {
+            conn = DriverManager.getConnection(connectionUrl);
             String query = "SELECT * FROM User";
             ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
@@ -67,7 +71,7 @@ public class UserDatabase {
                         rs.getInt("UserID")));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.err);
         } finally {
             if (conn != null)
                 try {conn.close();} catch (Exception e) {}
@@ -76,11 +80,11 @@ public class UserDatabase {
         return users;
     }
     
-    public static User getUser(int userID) {
+    public static User getUser(String email) {
         ArrayList<User> users = getAllUsers();
         
         for (User user : users) {
-            if (user.getUserID() == userID)
+            if (user.getEmail() == email)
                 return user;
         }
         

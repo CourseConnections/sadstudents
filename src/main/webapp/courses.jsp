@@ -3,7 +3,7 @@
     Created on : Nov 8, 2018, 1:26:06 PM
     Author     : soup
 --%>
-
+    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,8 +24,9 @@
                     <c:forEach items="${courses}" var="course">
                         <li>${course.getTitle()}</li>
                         </c:forEach>
-                    <li><button onclick="return addCourse()">Join ITCS 4155</button></li>
-                    
+                        <li><button onclick="return addCourse()">Join ITCS 4155</button></li>
+                        <li><a href="course?action=add">Join ITCS 4155</a></li>
+                            
                     <script>
                         function addCourse() {
                             
@@ -34,16 +35,15 @@
                             $.ajax({
                                 type: "GET",
                                 url: "https://courseconnections.rocket.chat/api/v1/commands.run",
-                                data: '{"command":"invite","roomId":"sXBYJjvCpJ3EtGmAY","params":"@jamie.gachie"}',
+                                data: {"command":"invite","roomId":"sXBYJjvCpJ3EtGmAY","params":"@jamie.gachie"},
                                 headers: '{"X-Auth-Token":"bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp","X-User-ID":"initialuser","Content-type":"application/json"}',
                                 contentType: "application/json",
                                 beforeSend: function(request) {
                                     request.setRequestHeader("X-Auth-Token", "bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp");
                                     request.setRequestHeader("X-User-ID", "initialuser");
-                                    request.setRequestHeader("Content-type", "application/json");
                                 },
                                 success: function(data) {
-                                    console.log(data);
+                                    alert(data);
                                     //do something when request is successfull
                                 },
                                 processData: false,
@@ -65,6 +65,6 @@
         <footer>           
             <%@include file="footer.jsp"%>
         </footer>
-        
+            
     </body>
 </html>

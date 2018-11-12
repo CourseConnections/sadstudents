@@ -39,7 +39,6 @@ function addCourse() {
     alert("Clicked!");
     
     
-    
     var request = new XMLHttpRequest();
     request.open("GET", "https://courseconnections.rocket.chat/api/v1/commands.run", true);
     request.send();
@@ -48,7 +47,7 @@ function addCourse() {
     $.ajax({
         type: "GET",
         url: "https://courseconnections.rocket.chat/api/v1/commands.run",
-        data: '{"command":"invite","roomId":"sXBYJjvCpJ3EtGmAY","params":"@jamie.gachie"}',
+        data: {'command':invite,'roomId':sXBYJjvCpJ3EtGmAY,'params':"@jamie.gachie"},
         headers: '{"X-Auth-Token":"bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp","X-User-ID":"initialuser","Content-type":"application/json"}',
         contentType: "application/json",
         beforeSend: function(request) {

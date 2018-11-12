@@ -5,7 +5,9 @@
 */
 package Servlets;
 
+import Utils.ParameterStringBuilder;
 import java.io.BufferedInputStream;
+import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +17,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.ProcessBuilder;
+import java.net.HttpURLConnection;
 import java.util.Arrays;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -42,21 +49,55 @@ public class CourseServlet extends HttpServlet {
             request.getServletContext().getRequestDispatcher("/menu.jsp").forward(request, response);
         
         if (action.equals("add")) {
+            
+            String stringUrl = "https://courseconnections.rocket.chat/api/v1/commands.run";
+            URL url = new URL(stringUrl);
+            HttpURLConnection uc = (HttpURLConnection) url.openConnection();
+            
+            uc.addRequestProperty("X-Auth-Token", "bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp");
+            uc.addRequestProperty("X-User-ID", "initialuser");
+            uc.addRequestProperty("Content-type", "application/json");
+            
+            Map<String, String> parameters = new HashMap<>();
+            parameters.put("command", "invite");
+            parameters.put("roomId", "sXBYJjvCpJ3EtGmAY");
+            parameters.put("user", "@jamie.gachie");
+            
+            uc.setDoOutput(true);
+            DataOutputStream out = new DataOutputStream(uc.getOutputStream());
+            out.writeBytes(ParameterStringBuilder.getParamsString(parameters));
+            out.flush();
+            out.close();
+            
+            System.out.println("Error: " + uc.getResponseCode());
+            
+            /*
+            
+            Process p = Runtime.getRuntime().exec("curl -H \"X-Auth-Token: bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp\" "
+            + "-H \"X-User-ID: initialuser\" "
+            + "-H \"Content-type: application/json\" "
+            + "-d {command:invite,roomId:sXBYJjvCpJ3EtGmAY,params,@jamie.gachie}");
+            
+            */
+            
+            /*
             pb = new ProcessBuilder("curl",
-                    "-H", "X-Auth-Token: bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp",
-                    "-H", "Content-type: application/json",
-                    "https://courseconnections.rocket.chat/api/v1/commands.run",
-                    "-d {command:\"invite\",\"roomId\":\"sXBYJjvCpJ3EtGmAY\",\"params\",\"@jamie.gachie\"}\'");
+            "-H", "X-Auth-Token: bUj7z12R_NZRFdYGrolW10IMsm-4Bot8D-DXM36ZkSp",
+            "-H", "X-User-ID: initialuser",
+            "-H", "Content-type: application/json",
+            "https://courseconnections.rocket.chat/api/v1/commands.run",
+            "-d {command:invite,roomId:sXBYJjvCpJ3EtGmAY,params,@jamie.gachie}");
             
             try {
-                
-                pb.redirectErrorStream(true);
-                Process p = pb.start();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             
-            request.getServletContext().getRequestDispatcher("/chat.jsp").forward(request, response);
+            pb.redirectErrorStream(true);
+            Process p = pb.start();
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
+            */
+            
+            request.getServletContext().getRequestDispatcher("/courses.jsp").forward(request, response);
         }
         else if (action.equals("remove")) {
             
