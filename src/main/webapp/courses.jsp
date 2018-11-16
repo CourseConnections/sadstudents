@@ -59,7 +59,7 @@
                                 $(".chzn-select").chosen();
                             });
                         </script>
-                        <input type="submit" value="Add Course"/>
+                        <input type="submit" value="Remove Course"/>
                     </form>
                 </div>
             </div>

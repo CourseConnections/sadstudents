@@ -1,6 +1,7 @@
 /home/soup/NetBeansProjects/CourseConnections/src/main/java/Utils/IdTokenVerifierAndParser.java
 /home/soup/NetBeansProjects/CourseConnections/src/main/java/Utils/Utils.java
 /home/soup/NetBeansProjects/CourseConnections/src/main/java/Servlets/AccountServlet.java
+/home/soup/NetBeansProjects/CourseConnections/src/main/java/Databases/UserCourseDatabase.java
 /home/soup/NetBeansProjects/CourseConnections/src/main/java/Databases/UserDatabase.java
 /home/soup/NetBeansProjects/CourseConnections/src/main/java/Beans/Course.java
 /home/soup/NetBeansProjects/CourseConnections/src/main/java/Beans/User.java

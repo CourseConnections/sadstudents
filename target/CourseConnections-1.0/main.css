@@ -27,6 +27,48 @@ footer {
     clear: both;
 }
 
+h2 {
+    color: #85a3e0;
+    font-size: 20px;
+}
+
+.center_wrapper {
+    text-align: center;
+}
+
+.center_wrapper form {
+    text-align: left;
+    margin-left: 2%;
+}
+
+.center_wrapper form label {
+    padding-right: 3%;
+}
+
+.col_header {
+    font-size: 150%;
+    color: black;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.content_col_left {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.content_col_right {
+    width: 40%;
+    height: 100%;
+    float: right;
+}
+
+.page_header {
+    text-align: center;
+    border-bottom: 2px solid #85a3e0;
+}
+
 .special_text {
     font-family: "Bree Serif";
     text-decoration: none;
@@ -41,13 +83,34 @@ footer {
     color: #800080;
 }
 
-#title {
-    font-size: 300%;
-    color: #85a3e0;
-    text-align: center;
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-bottom: 0;
+#channels {
+    border: 2px solid #85a3e0;
+    float: left;
+    width: 20%;
+}
+
+#chat_div {
+    width: 100%;
+    height: 100%;
+}
+
+#chat_frame {
+    width: 100%;
+    height: 1024px;
+}
+
+#copyright {
+    text-align: right;
+}
+
+#courses {
+    list-style-type: none;
+}
+
+#courses_column {
+    width: 45%;
+    height: 100%;
+    float: left;
 }
 
 #index_title {
@@ -60,29 +123,38 @@ footer {
     margin-top: 10%;
 }
 
-h2 {
-    color: #85a3e0;
-    font-size: 20px;
+#home {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
-#signout {
-    float:right; 
-    padding-top: 0px;
-    text-decoration: none;
-    color: #85a3e0;
-}
-#signout a:hover {
-    color: #800080;
+#home_logo {
+    height:375px;
+    width:360px;
+    padding-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
-#title span, #index_title span {
-    color: #800080;
+#login_div {
+    display: inline-block;
+    width: 40%;
+    border: 3px solid #85a3e0;
 }
+
 #login_register {
     display: inline-block;
 }
 
-#copyright {
-    text-align: right;
+#logo {
+    width: 15%;
+    height: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #85a3e0;
+    border-radius: 50%;
 }
 
 #navbar {
@@ -119,111 +191,42 @@ h2 {
     background-color: #800080;    
 }
 
-#logo {
-    width: 15%;
-    height: 15%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #85a3e0;
-    border-radius: 50%;
-}
-
-#home {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-#home_logo {
-    height:375px;
-    width:360px;
-    padding-top: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
 #profile2 {
     border: none;    
-}
-
-#login_div {
-    display: inline-block;
-    width: 40%;
-    border: 3px solid #85a3e0;
-}
-
-.center_wrapper {
-    text-align: center;
-}
-
-#welcome_text {
-    text-align: center;
-}
-
-.col_header {
-    font-size: 150%;
-    color: black;
-    text-decoration: underline;
-    text-align: center;
-}
-
-.content_col_left {
-    width: 40%;
-    height: 100%;
-    float: left;
-}
-
-.content_col_right {
-    width: 40%;
-    height: 100%;
-    float: right;
-}
-
-#courses_column {
-    width: 45%;
-    height: 100%;
-    float: left;
-}
-
-#courses {
-    list-style-type: none;
 }
 
 #settings {
     list-style-type: none;
 }
 
-.page_header {
-    text-align: center;
-    border-bottom: 2px solid #85a3e0;
+#signout {
+    float:right; 
+    padding-top: 0px;
+    text-decoration: none;
+    color: #85a3e0;
 }
-
-#channels {
-    border: 2px solid #85a3e0;
-    float: left;
-    width: 20%;
-}
-
-#chat_div {
-    width: 100%;
-    height: 100%;
-}
-
-#chat_frame {
-    width: 100%;
-    height: 1024px;
-}
-
-.center_wrapper form {
-    text-align: left;
-    margin-left: 2%;
-}
-
-.center_wrapper form label {
-    padding-right: 3%;
+#signout a:hover {
+    color: #800080;
 }
 
 #submit_button {
     float: right;
     margin-right: 5%;
+}
+
+#title {
+    font-size: 300%;
+    color: #85a3e0;
+    text-align: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 0;
+}
+
+#title span, #index_title span {
+    color: #800080;
+}
+
+#welcome_text {
+    text-align: center;
 }
