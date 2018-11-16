@@ -61,4 +61,12 @@ function addCourse() {
         },
         dataType: "json"
     });
+    
+    function signIn() {
+        window.parent.postMessage({
+            event: 'call-google-login',
+            scope: 'https://www.googleapis.com/auth/userinfo.email',
+            webClientId: 'PBSanB292R55jcjRA'
+        }, 'http://courseconnections.rocket.chat');
+    }
 }

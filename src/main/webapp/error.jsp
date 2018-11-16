@@ -17,7 +17,9 @@
         
         <div class="center_wrapper">
                  <div id="login_div">
-                <p class="special_text">Whoops! Looks like something went wrong. Please return to the homepage and try again.</p>
+                <p class="special_text">Whoops! Looks like you encountered an error:</p>
+                <p id="error_msg">${errorMsg}</p>
+                <p class="special_text">Please go back and try again, or return to the login page <a href="index.jsp">here</a>.</p>
             </div>
         </div>
     </body>

@@ -75,4 +75,8 @@ public class Course {
     public void setCRN(int CRN) {
         this.CRN = CRN;
     }
+    
+    public String getAbbr() {
+        return prefix + "-" + designation;
+    }
 }

@@ -51,8 +51,7 @@ public class CourseDatabase {
     }
     
     public static Course getCourse(int CRN) {
-        //ArrayList<Course> courses = getAllCourses();
-        ArrayList<Course> courses = new ArrayList<Course>();
+        ArrayList<Course> courses = getAllCourses();
         
         for (Course course : courses) {
             if (course.getCRN() == CRN)

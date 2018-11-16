@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.sql.DataSource;
 import java.sql.DriverManager;
 
 /**
@@ -91,5 +90,27 @@ public class UserDatabase {
         }
         
         return null;
+    }
+    
+    public static User getUser(int userID) {
+        ArrayList<User> users = getAllUsers();
+        
+        for (User user : users) {
+            if (user.getUserID() == userID)
+                return user;
+        }
+        
+        return null;
+    }
+    
+    public static boolean checkUsername(String username) {
+        ArrayList<User> users = getAllUsers();
+        
+        for (User user : users) {
+            if (user.getUsername().equals(username))
+                return true;
+        }
+        
+        return false;
     }
 }

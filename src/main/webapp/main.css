@@ -213,3 +213,17 @@ h2 {
     width: 100%;
     height: 1024px;
 }
+
+.center_wrapper form {
+    text-align: left;
+    margin-left: 2%;
+}
+
+.center_wrapper form label {
+    padding-right: 3%;
+}
+
+#submit_button {
+    float: right;
+    margin-right: 5%;
+}
