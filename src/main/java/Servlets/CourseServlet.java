@@ -136,7 +136,11 @@ public class CourseServlet extends HttpServlet {
         }
         else if (action == null) {
             request.setAttribute("courseList", CourseDatabase.getAllCourses());
-            request.getServletContext().getRequestDispatcher("/courses.jsp");
+            
+            
+            
+            //request.setAttribute("jsonString", CourseDatabase.getAllCourses().toString())
+            request.getServletContext().getRequestDispatcher("/courses.jsp").forward(request, response);
         }
         else {
             request.getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);

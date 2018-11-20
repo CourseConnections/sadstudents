@@ -15,14 +15,6 @@ body {
     font-family: Arial;
 }
 
-main {
-    margin-top: 2em;
-    padding: .5em;
-    clear: both;
-    border: 2px solid #85a3e0;
-    height: 100%;
-}
-
 footer {
     clear: both;
 }
@@ -30,6 +22,15 @@ footer {
 h2 {
     color: #85a3e0;
     font-size: 20px;
+}
+
+main {
+    margin-top: 2em;
+    padding: .5em;
+    clear: both;
+    border: 2px solid #85a3e0;
+    min-height: 600px;
+    overflow: auto;
 }
 
 .center_wrapper {
@@ -66,7 +67,12 @@ h2 {
 
 .page_header {
     text-align: center;
-    border-bottom: 2px solid #85a3e0;
+}
+
+.select_course{
+    width: 70%;
+    height: 90%;
+    display: inline-block;
 }
 
 .special_text {
@@ -111,6 +117,26 @@ h2 {
     width: 45%;
     height: 100%;
     float: left;
+}
+
+#course_info {
+    margin-top: 60px;
+    clear: both;
+    width: 100%;
+    min-height: 15em;
+}
+
+#course_info h2 {
+    text-align: center;
+    font-size: 200%;
+    color: black;
+}
+
+#course_info p {
+    margin-left: 2%;
+}
+
+#course_title {
 }
 
 #index_title {
