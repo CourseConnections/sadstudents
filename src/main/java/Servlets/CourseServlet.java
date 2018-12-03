@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.StringTokenizer;
 import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 /**
  *
@@ -56,7 +57,6 @@ public class CourseServlet extends HttpServlet {
             Process p = pb.start();
             String message = getMessage(p);
             
-            request.getServletContext().log(message);
             StringBuilder builder = new StringBuilder(message);
             int end = message.indexOf(abbr);
             String roomID = builder.substring(end-27, end-10);
